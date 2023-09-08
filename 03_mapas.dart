@@ -1,27 +1,22 @@
 void main() {
   
-  final String lion = 'Corzo';
-  final int hp = 100;
-  final bool isAlive = true;
-  final List<String> abilities = ['enemie'];
-  final sprites = <String>['Corzo/frente.png','Corzo/deespalda.png'];
+  final Map<String, dynamic> lion = {
+    'name': 'Corzo',
+    'hp': 100,
+    'isAlive': true,
+    'abilities': <String>['enemie'],
+    'sprites': {
+      1: 'Corzo/front.png',
+      2: 'Corzo/back.png'
+    }
+  };
   
-// dynamic == null
-  dynamic errorMessage = 'Hola';
-  errorMessage = true;
-  errorMessage = [1,2,3,4,5,6];
-  errorMessage = { 1,2,3,4,5,6 };
-  errorMessage = () => true;
-  errorMessage = null;
-    
-  print("""
-  $lion
-  $hp
-  $isAlive
-  $abilities
-  $sprites
-  $errorMessage
-  """);
   
+  print(lion);
+  print('Name: ${ lion['name']  }');
+  print('Name: ${ lion['sprites']  }');
+  
+  print('Back: ${ lion['sprites'][2]  }');
+  print('Front: ${ lion['sprites'][1]  }');
   
 }
